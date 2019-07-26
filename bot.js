@@ -71,8 +71,6 @@ client.on('ready',  () => {
 
        !obc لأرسال برود كاست للأونلاين
 
-       !adminbc لارسال برودكاست بدون منشن للكل
-
        ** `)
    message.author.sendEmbed(embed)
    
