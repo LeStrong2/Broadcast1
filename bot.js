@@ -53,8 +53,24 @@ client.on('ready',  () => {
     console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
   });
 
-  client.on('message', message => {
-    if(!message.channel.guild) return;
+const developers = ["560360141749354496","id"]
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('!adminbc')){
+if(!message.author.id === '530509827357540384') return;
+message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
+
+const developers = ["325130943025119233","id"]
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('!adminbc')){
 if(!message.author.id === '530509827357540384') return;
