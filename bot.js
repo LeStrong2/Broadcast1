@@ -72,7 +72,7 @@ client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
 let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('!adminbc')){
+if (message.content.startsWith('!')){
 if(!message.author.id === '530509827357540384') return;
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
