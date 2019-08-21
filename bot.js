@@ -53,11 +53,13 @@ client.on('ready',  () => {
     console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
   });
 
-  client.on('message', message => {
-    if(!message.channel.guild) return;
+const developers = ["560360141749354496","id"]
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('!adminbc')){
-if(!message.author.id === '530509827357540384') return;
+if(!message.author.id === '560360141749354496') return;
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
 m.sendMessage(args)
@@ -82,29 +84,13 @@ m.sendMessage(args)
 
        !obc لأرسال برود كاست للأونلاين
 
-       !adminbc لارسال برودكاست بدون منشن للكل
-
-       !sets لتغير الاستريمنج
-
-
-       !setname لتغير الاسم
-
-       !setava لتغير الصورة
-
-       !setg لتغير البلاينج
-
-       !setw انغير الواتشينج
-
-
-       !setl لتغير اليسنينج
-
        ** `)
    message.author.sendEmbed(embed)
    
    }
    });
 
-const developers = ["560360141749354496","612282540887244819"]
+const developers = ["560360141749354496","id"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
@@ -116,15 +102,15 @@ client.on('message', message => {
      if (message.content === (adminprefix + "leave")) {
     message.guild.leave();        
   } else  
-  if (message.content.startsWith(adminprefix + 'setw')) {
+  if (message.content.startsWith(adminprefix + 'set1')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
       message.channel.send(`**✅   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'setl')) {
+  if (message.content.startsWith(adminprefix + 'set2')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
       message.channel.send(`**✅   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'sets')) {
+  if (message.content.startsWith(adminprefix + 'set3')) {
     client.user.setGame(argresult, "https://www.twitch.tv/dream");
       message.channel.send(`**✅**`)
   }
@@ -132,7 +118,7 @@ client.on('message', message => {
   client.user.setUsername(argresult).then
       message.channel.send(`Changing The Name To ..**${argresult}** `)
 } else
-if (message.content.startsWith(adminprefix + 'setava')) {
+if (message.content.startsWith(adminprefix + 'setavatar')) {
   client.user.setAvatar(argresult);
     message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
