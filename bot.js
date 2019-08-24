@@ -2,9 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
-client.login('NDc1MjA0ODMwMjc3Nzk1ODUx.XThZ3Q.I6GtlcG0xcOfLwAnnB9aApQv2_c'); 
-
-
 client.on('ready',  () => {
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
   console.log('by LeStong_');
@@ -30,3 +27,4 @@ m.sendMessage(args)
 
 
 
+client.login(process.env.TOKEN);
