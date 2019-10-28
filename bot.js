@@ -55,21 +55,21 @@ client.on('ready',  () => {
 
 
   client.on('message', msg => {
-    if(msg.content === '!help')
+    if(msg.content === '1help')
     msg.reply('Check Your DM :white_check_mark:')
   });
   
   
   client.on("message", message => {
-    if (message.content === "$help") {
+    if (message.content === "1help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
 
-       !obc | لأرسال برود كاست للكل
+       1obc | لأرسال برود كاست للكل
 
-       !bc  |  لأرسال برود كاست للأونلاين
+       1bc  |  لأرسال برود كاست للأونلاين
 
        ** `)
    message.author.sendEmbed(embed)
