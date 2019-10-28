@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "1"
-var adminprefix = '1'
+var prefix = "#"
+var adminprefix = '#'
 
 
 //bc
 
 client.on("message", message => {
-    if (message.content.startsWith("1obc")) {
+    if (message.content.startsWith("#obc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -23,7 +23,7 @@ client.on("message", message => {
 //bc online
 
 
-  var prefix = "1";
+  var prefix = "#";
 
   client.on("message", message => {
   
@@ -41,7 +41,7 @@ client.on("message", message => {
 
 client.on('message', message => {
     var  user = message.mentions.users.first() || message.author;
-if (message.content.startsWith("!avatar")) {
+if (message.content.startsWith("#avatar")) {
 message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 }
 });
@@ -55,7 +55,7 @@ client.on('ready',  () => {
 
 
   client.on('message', msg => {
-    if(msg.content === '1help')
+    if(msg.content === '#help')
     msg.reply('Check Your DM :white_check_mark:')
   });
   
@@ -67,9 +67,9 @@ client.on('ready',  () => {
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
 
-       1obc | لأرسال برود كاست للكل
+       #obc | لأرسال برود كاست للكل
 
-       1bc  |  لأرسال برود كاست للأونلاين
+       #bc  |  لأرسال برود كاست للأونلاين
 
        ** `)
    message.author.sendEmbed(embed)
