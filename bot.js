@@ -5,31 +5,22 @@ var adminprefix = '#'
 
 
 
-//bc online
 
+//bc
 
-  var prefix = "#";
-
-  client.on("message", message => {
-  
-              if (message.content.startsWith(prefix + "bc")) {
-                           if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-    let args = message.content.split(" ").slice(1);
-    var argresult = args.join(' '); 
-    message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
-   m.send(`${argresult}\n ${m}`);
+client.on("message", message => {
+    if (message.content.startsWith("#bc")) {
+                 if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' ');
+  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
+  m.send(`${argresult}\n ${m}`);
   })
-   message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` :mailbox:  عدد المستلمين `); 
-   message.delete(); 
-  };     
+  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  عدد المستلمين `);
+  message.delete();
+  };
   });
 
-client.on('message', message => {
-    var  user = message.mentions.users.first() || message.author;
-if (message.content.startsWith("#avatar")) {
-message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
-}
-});
 
 client.on('ready',  () => {
     console.log('تم تشغيل :Broadcast  ');
