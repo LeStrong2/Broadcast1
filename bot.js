@@ -45,8 +45,6 @@ client.on('ready',  () => {
 
        #bc | لأرسال برود كاست للكل
 
-       #obc  |  لأرسال برود كاست للأونلاين
-
        ** `)
    message.author.sendEmbed(embed)
    
