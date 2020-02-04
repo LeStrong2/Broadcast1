@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "#"
-var adminprefix = '#'
+var prefix = "2"
+var adminprefix = '2'
 
 
 
@@ -9,7 +9,7 @@ var adminprefix = '#'
 //bc
 
 client.on("message", message => {
-    if (message.content.startsWith("#bc")) {
+    if (message.content.startsWith("2bc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -31,19 +31,19 @@ client.on('ready',  () => {
 
 
   client.on('message', msg => {
-    if(msg.content === '#help')
+    if(msg.content === '2help')
     msg.reply('Check Your DM :white_check_mark:')
   });
   
   
   client.on("message", message => {
-    if (message.content === "#help") {
+    if (message.content === "2help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
 
-       #bc | لأرسال برود كاست للكل
+       2bc | لأرسال برود كاست للكل
 
        ** `)
    message.author.sendEmbed(embed)
